@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.btn {
+			width: 200px;
+			height: 200px;
+			background: red;
+		}
+		.btn2 {
+			width: 200px;
+			height: 200px;
+			background: green;
+		}
+	</style>
+</head>
+<body>
+	<div class="btn">
+		
+	</div>
+	<div class="btn2">
+		
+	</div>
+	<script type="text/javascript">
+		let btn = document.querySelector('.btn');
+		let btn2 = document.querySelector('.btn2');
+
+		let time = 0;
+
+		btn.onclick = function() {
+			time = 0;
+			let showTime = function() {
+				time = time + 1;			
+				console.log(time);
+			}
+			stop = setInterval(showTime, 1000)
+		}
+		btn2.onclick = function() {
+			clearInterval(stop);
+		}
+	</script>
+</body>
+</html>

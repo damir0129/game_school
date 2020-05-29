@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		@font-face{
+			src:url(19453.otf);
+			font-family: my-font;
+		}
+		@font-face{
+			src:url(19296.ttf);
+			font-family: my-font2;
+		}
+		.main {
+			width: 100%;
+			height: 950px;
+			background: grey;
+		}
+		.kabinet_1 {
+			width: 200px;
+			height: 400px;
+			background: red;
+			position: absolute;
+			top: 300px;
+			left: 600px;
+		}
+		.kabinet_2 {
+			width: 200px;
+			height: 400px;
+			background: red;
+			position: absolute;
+			top: 300px;
+			left: 1200px;
+		}
+		.kabinet_1_2 {
+			width: 200px;
+			height: 400px;
+			background: yellow;
+			position: absolute;
+			top: 300px;
+			left: 600px;
+			display: none;
+			background-image: url(door1.png);
+			background-size: 100% 100%;
+		}
+		.kabinet_2_2 {
+			width: 200px;
+			height: 400px;
+			background: yellow;
+			position: absolute;
+			top: 300px;
+			left: 1200px;
+			display: none;
+			background-image: url(door1.png);
+			background-size: 100% 100%;
+		}
+		.loc1_kg {
+			width: 100%;
+			height: 950px;
+			background: red;
+			display: none;
+		}
+		.loc2_km {
+			width: 100%;
+			height: 950px;
+			background: green;
+			display: none;
+		}
+		.falseq {
+			width: 300px;
+			height: 100px;
+			position: absolute;
+			background-image: url(variant.png);
+			background-size: 100% 100%;
+		}
+		.newfalseq {
+			width: 300px;
+			height: 100px;
+			position: absolute;
+			display: none;
+			background-image: url(variant.png);
+			background-size: 100% 100%;
+		}
+		.newfalseq2 {
+			width: 300px;
+			height: 100px;
+			position: absolute;
+			display: none;
+			background-image: url(variant.png);
+			background-size: 100% 100%;
+		}
+		.newfalseq3 {
+			width: 300px;
+			height: 100px;
+			position: absolute;
+			display: none;
+			background-image: url(variant.png);
+			background-size: 100% 100%;
+		}
+		.newfalsea {
+			width: 300px;
+			height: 100px;
+			position: absolute;
+			display: none;
+			background-image: url(variant.png);
+			background-size: 100% 100%;
+		}
+		.newfalsea2 {
+			width: 300px;
+			height: 100px;
+			position: absolute;
+			display: none;
+			background-image: url(variant.png);
+			background-size: 100% 100%;
+		}
+		.newfalsea3 {
+			width: 300px;
+			height: 100px;
+			position: absolute;
+			display: none;
+			background-image: url(variant.png);
+			background-size: 100% 100%;
+		}
+		.trueq {
+			width: 300px;
+			height: 100px;
+			position: absolute;
+			background-image: url(variant.png);
+			background-size: 100% 100%;
+		}
+		.falsea {
+			width: 300px;
+			height: 100px;
+			position: absolute;
+			background-image: url(variant.png);
+			background-size: 100% 100%;
+		}
+		.truea {
+			width: 300px;
+			height: 100px;
+			position: absolute;
+			background-image: url(variant.png);
+			background-size: 100% 100%;
+		}
+		.falseq2 {
+			width: 300px;
+			height: 100px;
+			position: absolute;
+			background-image: url(variant.png);
+			background-size: 100% 100%;
+		}
+		.trueq2 {
+			width: 300px;
+			height: 100px;
+			position: absolute;
+			background-image: url(variant.png);
+			background-size: 100% 100%;
+		}
+		.falsea2 {
+			width: 300px;
+			height: 100px;
+			position: absolute;
+			background-image: url(variant.png);
+			background-size: 100% 100%;
+		}
+		.truea2 {
+			width: 300px;
+			height: 100px;
+			position: absolute;
+			background-image: url(variant.png);
+			background-size: 100% 100%;
+		}
+		.falseq3 {
+			width: 300px;
+			height: 100px;
+			position: absolute;
+			background-image: url(variant.png);
+			background-size: 100% 100%;
+		}
+		.trueq3 {
+			width: 300px;
+			height: 100px;
+			position: absolute;
+			background-image: url(variant.png);
+			background-size: 100% 100%;
+		}
+		.falsea3 {
+			width: 300px;
+			height: 100px;
+			position: absolute;
+			background-image: url(variant.png);
+			background-size: 100% 100%;
+		}
+		.truea3 {
+			width: 300px;
+			height: 100px;
+			position: absolute;
+			background-image: url(variant.png);
+			background-size: 100% 100%;
+		}
+		.loc1_1 {
+			display: none;
+		}
+		.loc1_2 {
+			display: none;
+		}
+		.loc1_3 {
+			display: none;
+		}
+		.loc2_1 {
+			display: none;
+		}
+		.loc2_2 {
+			display: none;
+		}
+		.loc2_3 {
+			display: none;
+		}
+		.kabinet_win {
+			width: 150px;
+			height: 200px;
+			background: red;
+			top: 500px;
+			left: 925px;
+			position: absolute;
+			background-image: url(door_3_1.png);
+			background-size: 100% 100%;
+		}
+		.progress {
+			width: 150px;
+			background: black;
+			height: 30px;
+		}
+		.progress_1 {
+			width: 75px;
+			background: black;
+			height: 30px;
+		}
+		.progress_2{
+			width: 75px;
+			background: black;
+			height: 30px;
+		}
+		.win {
+			width: 100%;
+			height: 750px;
+			padding-top: 200px;
+			background-image: url(win.png);
+			background-size: 100% 100%;
+			display: none;
+		}
+		.win_txt {
+			font-size: 220px;
+			font-family: Arial;
+			color: green;
+			text-align: center;
+		}
+		.question {
+			background-image: url(doska.png);
+			background-size: 100% 100%;
+			width: 400px;
+			height: 300px;
+			margin-left: 250px;
+			padding-left: 40px;
+			padding-right: 40px;
+			position: absolute;
+		}
+		.text_center {
+			text-align: center;
+			font-size: 30px;
+			font-family: Arial;
+		}
+		.text_center1 {
+			text-align: center;
+			font-size: 40px;
+			font-family: Arial;
+		}
+		.floor {
+			width: 100%;
+			height: 450px;
+			background: pink;
+			background-image: url(floor.png);
+			background-size: 100% 100%;
+		}
+		.floor_kabinet {
+			width: 100%;
+			height: 450px;
+			padding-bottom: 500px;
+			background: pink;
+			background-image: url(floor.png);
+			background-size: 100% 100%;
+		}
+		.top {
+			width: 100%;
+			height: 500px;
+			background: pink;
+		}
+		.sign1 {
+			width: 250px;
+			height: 80px;
+			position: absolute;
+			left: 575px;
+			top: 220px;
+			background-image: url(sign.png);
+			background-size: 100% 100%;
+		}
+		.sign2 {
+			width: 250px;
+			height: 80px;
+			position: absolute;
+			left: 1175px;
+			top: 220px;
+			background-image: url(sign.png);
+			background-size: 100% 100%;
+		}
+		.sign3 {
+			width: 250px;
+			height: 80px;
+			position: absolute;
+			left: 875px;
+			top: 420px;
+			background-image: url(sign.png);
+			background-size: 100% 100%;
+		}
+		.first {
+			left: 400px; 
+			top: 800px;
+		}
+		.second {
+			left: 640px; 
+			top: 400px;
+		}
+		.third {
+			left: 640px; 
+			top: 600px;
+		}
+		.fourth {
+			left: 320px; 
+			top: 400px;
+		}
+		.fifth {
+			left: 1280px; 
+			top: 600px;
+		}
+		.sixth {
+			left: 1280px; 
+			top: 400px;
+		}
+		.seventh {
+			left: 1200px; 
+			top: 800px;
+		}
+		.eighth {
+			left: 320px; 
+			top: 600px;
+		}
+		.nineth {
+			left: 960px; 
+			top: 600px;
+		}
+		.tenth {
+			left: 960px; 
+			top: 400px;
+		}
+		.eleventh {
+			left: 800px; 
+			top: 800px;
+		}
+		.flower1_1 {
+			width: 150px;
+			background-image: url(sprite1.png);
+			background-size: 100% 100%;
+			position: absolute;
+			left: 20px;
+			top: 400px;
+			height: 200px;
+		}
+		.flower1_2 {
+			width: 150px;
+			background-image: url(sprite1.png);
+			background-size: 100% 100%;
+			position: absolute;
+			left: 1750px;
+			top: 750px;
+			height: 200px;
+		}
+		.flower1_3 {
+			width: 150px;
+			background-image: url(sprite1.png);
+			background-size: 100% 100%;
+			position: absolute;
+			left: 20px;
+			top: 575px;
+			height: 200px;
+		}
+		.flower2_1 {
+			width: 150px;
+			background-image: url(sprite2.png);
+			background-size: 100% 100%;
+			position: absolute;
+			left: 1750px;
+			top: 575px;
+			height: 200px;
+		}
+		.flower2_2 {
+			width: 150px;
+			background-image: url(sprite2.png);
+			background-size: 100% 100%;
+			position: absolute;
+			left: 1750px;
+			top: 400px;
+			height: 200px;
+		}
+		.flower2_3 {
+			width: 150px;
+			background-image: url(sprite2.png);
+			background-size: 100% 100%;
+			position: absolute;
+			left: 20px;
+			top: 750px;
+			height: 200px;
+		}
+		.ramka {
+			background-image: url(sprite6.png);
+			background-size: 100% 100%;
+			width: 300px;
+			height: 200px;
+			position: absolute;
+		}
+		.ramka1 {
+			left: 900px;
+			top: 100px;
+		}
+		.ramka2 {
+			left: 1200px;
+			top: 100px;
+		}
+		.ramka3 {
+			left: 1500px;
+			top: 100px;
+		}
+		.sprite3 {
+			background-image: url(sprite3.png);
+			background-color: white;
+			background-size: 100% 100%;
+			position: absolute;
+			width: 300px;
+			height: 200px;
+			left: 900px;
+			top: 100px;
+		}
+		.sprite4 {
+			background-image: url(sprite4.png);
+			background-color: white;
+			background-size: 100% 100%;
+			position: absolute;
+			width: 300px;
+			height: 200px;
+			left: 1200px;
+			top: 100px;
+		}
+		.sprite7 {
+			background-image: url(sprite7.png);
+			background-color: white;
+			background-size: 100% 100%;
+			position: absolute;
+			width: 300px;
+			height: 200px;
+			left: 1500px;
+			top: 100px;
+		}
+		.sprite8 {
+			background-image: url(sprite8.png);
+			background-color: white;
+			background-size: 100% 100%;
+			position: absolute;
+			width: 300px;
+			height: 200px;
+			left: 900px;
+			top: 100px;
+		}
+		.sprite9 {
+			background-image: url(sprite9.png);
+			background-color: white;
+			background-size: 100% 100%;
+			position: absolute;
+			width: 300px;
+			height: 200px;
+			left: 1200px;
+			top: 100px;
+		}
+		.sprite10 {
+			background-image: url(sprite10.png);
+			background-color: white;
+			background-size: 100% 100%;
+			position: absolute;
+			width: 300px;
+			height: 200px;
+			left: 1500px;
+			top: 100px;
+		}
+		.skameyka {
+			background-image: url(skameyka.png);
+			background-size: 100% 100%;
+			width: 425px;
+			height: 175px;
+			position: absolute;
+			left: 100px;
+			top: 575px;
+		}
+		.skameyka2 {
+			background-image: url(skameyka.png);
+			background-size: 100% 100%;
+			width: 425px;
+			height: 175px;
+			position: absolute;
+			left: 1450px;
+			top: 575px;
+		}
+		.ramka_2 {
+			background-image: url(ramka4.png);
+			background-size: 100% 100%;
+			width: 1000px;
+			margin-left: auto;
+			margin-right: auto;
+			height: 200px;
+			position: absolute;
+			top: 5px;
+			left: 500px;
+		}
+		.schooltxt {
+			padding-left: 150px;
+			padding-right: 150px;
+			padding-top: 20px;
+			margin-left: 150px;
+			margin-right: 100px;
+			font-size: 100px;
+			font-family: my-font;
+		}
+		.clock {
+			background-image: url(clock.png);
+			background-size: 100% 100%;
+			width: 120px;
+			height: 120px;
+			position: absolute;
+			left: 940px;
+			top: 250px;
+		}
+		.chat {
+			background-image: url(chat2.png);
+			background-size: 100% 100%;
+			position: absolute;
+			width: 300px;
+			height: 200px;
+			padding-left: 80px;
+			padding-right: 80px;
+			padding-top: 50px;
+			left: 150px;
+			top: 330px;
+			display: none;
+		}
+		.chat2 {
+			background-image: url(chat2.png);
+			background-size: 100% 100%;
+			position: absolute;
+			width: 300px;
+			height: 200px;
+			padding-left: 80px;
+			padding-right: 80px;
+			padding-top: 50px;
+			left: 1460px;
+			top: 330px;
+			display: none;
+		}
+		.innertext {
+			font-size: 25px;
+			font-family: my-font2;
+		}
+		.innertext2 {
+			font-size: 25px;
+			font-family: my-font2;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="chat"><p class="innertext"></p></div>
+		<div class="chat2"><p class="innertext2"></p></div>
+		<div class="clock"></div>
+		<div class="ramka_2">
+			<h1 class="schooltxt"> S C H O O L </h1>
+		</div>
+		<div class="skameyka">
+			
+		</div>
+		<div class="skameyka2">
+			
+		</div>
+		<div class="top">
+			
+		</div>
+		<div style="display: flex">
+			<div class="sign1" style="background-color: white">
+				<h4 style="text-align: center; font-family: my-font2"> Кабинет биологии </h4>
+			</div>
+			<div class="kabinet_1" style="background-image: url(door2.png); background-size: 100% 100%;">
+				
+			</div>
+			<div class="kabinet_1_2">
+				
+			</div>
+			<div class="sign2" style="background-color: white">
+				<h4 style="text-align: center; font-family: my-font2; padding-left: 30px; padding-right: 30px"> Кабинет математики </h4>
+			</div>
+			<div class="kabinet_2" style="background-image: url(door2.png); background-size: 100% 100%;">
+				
+			</div>
+			<div class="kabinet_2_2">
+				
+			</div>
+			<div class="sign3" style="background-color: white">
+				<h2 style="text-align: center; font-family: my-font2"> Выход </h2>
+			</div>
+			<div class="kabinet_win">
+				<div class="progress">
+					<div style="display: flex">
+						<div class="progress_1">
+							
+						</div>
+						<div class="progress_2">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="floor">
+			
+		</div>
+	</div>
+	<div class="win">
+	</div>
+	<div class="loc1_kg floor_kabinet">
+		<div class="sprite3">
+			
+		</div>
+		<div class="sprite4">
+			
+		</div>
+		<div class="sprite7">
+			
+		</div>
+		<div class="ramka ramka1">
+			
+		</div>
+		<div class="ramka ramka2">
+			
+		</div>
+		<div class="ramka ramka3">
+			
+		</div>
+		<div class="flower1_1">
+			
+		</div>
+		<div class="flower1_2">
+			
+		</div>
+		<div class="flower1_3">
+			
+		</div>
+		<div class="flower2_1">
+			
+		</div>
+		<div class="flower2_2">
+			
+		</div>
+		<div class="flower2_3">
+			
+		</div>
+		<div class="loc1_1">	
+			<div class="question1 question" style="left: 10px; top: 10px;">
+				<h5 class="text_center1">Сколько сердец у осьминога?</h5>
+			</div>		
+			<div class="falseq first">
+				<h4 class="text_center">1</h4>
+			</div>
+			<div class="falseq second">
+				<h4 class="text_center">2</h4>
+			</div>
+			<div class="falseq third">
+				<h4 class="text_center">0</h4>
+			</div>
+			<div class="falseq fourth">
+				<h4 class="text_center">4</h4>
+			</div>
+			<div class="falseq fifth">
+				<h4 class="text_center">5</h4>
+			</div>
+			<div class="falseq sixth">
+				<h4 class="text_center">6</h4>
+			</div>
+			<div class="newfalseq seventh">
+				<h4 class="text_center">7</h4>
+			</div>
+			<div class="newfalseq eighth">
+				<h4 class="text_center">9</h4>
+			</div>
+			<div class="newfalseq nineth">
+				<h4 class="text_center">8</h4>
+			</div>
+			<div class="newfalseq tenth">
+				<h4 class="text_center">10</h4>
+			</div>
+			<div class="trueq eleventh">
+				<h4 class="text_center">3</h4>
+			</div>
+		</div>
+		<div class="loc1_2">
+			<div class="question2 question" style="left: 10px; top: 10px;">
+				<h5 class="text_center1">Какова продолжительность жизни дуба?</h5>
+			</div>
+			<div class="falseq2 first">
+				<h4 class="text_center">400</h4>
+			</div>
+			<div class="falseq2 second">
+				<h4 class="text_center">100</h4>
+			</div>
+			<div class="falseq2 fourth">
+				<h4 class="text_center">200</h4>
+			</div>
+			<div class="falseq2 eleventh">
+				<h4 class="text_center">250</h4>
+			</div>
+			<div class="falseq2 fifth">
+				<h4 class="text_center">300</h4>
+			</div>
+			<div class="falseq2 sixth">
+				<h4 class="text_center">750</h4>
+			</div>
+			<div class="newfalseq2 seventh">
+				<h4 class="text_center">500</h4>
+			</div>
+			<div class="newfalseq2 eighth">
+				<h4 class="text_center">1000</h4>
+			</div>
+			<div class="newfalseq2 nineth">
+				<h4 class="text_center">5000</h4>
+			</div>
+			<div class="newfalseq2 tenth">
+				<h4 class="text_center">2000</h4>
+			</div>
+			<div class="trueq2 third">
+				<h4 class="text_center">1500</h4>
+			</div>
+		</div>
+		<div class="loc1_3">
+			<div class="question question3">
+				<h5 class="text_center1">сколько костей в составе взрослого человека?</h5>
+			</div>
+			<div class="falseq3 first">
+				<h5 class="text_center">10-12</h5>
+			</div>
+			<div class="falseq3 second">
+				<h4 class="text_center">100-110</h4>
+			</div>
+			<div class="falseq3 third">
+				<h4 class="text_center">15-20</h4>
+			</div>
+			<div class="falseq3 eleventh">
+				<h4 class="text_center">30-40</h4>
+			</div>
+			<div class="falseq3 fifth">
+				<h4 class="text_center">50-62</h4>
+			</div>
+			<div class="falseq3 sixth">
+				<h4 class="text_center">120-140</h4>
+			</div>
+			<div class="newfalseq3 seventh">
+				<h4 class="text_center">151-153</h4>
+			</div>
+			<div class="newfalseq3 eighth">
+				<h4 class="text_center">200-203</h4>
+			</div>
+			<div class="newfalseq3 nineth">
+				<h4 class="text_center">180-193</h4>
+			</div>
+			<div class="newfalseq3 tenth">
+				<h4 class="text_center">160-163</h4>
+			</div>
+			<div class="trueq3 fourth">
+				<h4 class="text_center">205-207</h4>
+			</div>
+		</div>
+	</div>
+	<div class="loc2_km floor_kabinet">
+		<div class="ramka ramka1">
+			
+		</div>
+		<div class="ramka ramka2">
+			
+		</div>
+		<div class="ramka ramka3">
+			
+		</div>
+		<div class="sprite8">
+			
+		</div>
+		<div class="sprite9">
+			
+		</div>
+		<div class="sprite10">
+			
+		</div>
+		<div class="flower1_1">
+			
+		</div>
+		<div class="flower1_2">
+			
+		</div>
+		<div class="flower1_3">
+			
+		</div>
+		<div class="flower2_1">
+			
+		</div>
+		<div class="flower2_2">
+			
+		</div>
+		<div class="flower2_3">
+			
+		</div>
+		<div class="loc2_1">
+			<div class="question question4">
+				<h5 class="text_center1">чему равен два в девятой степени?</h5>
+			</div>
+			<div class="falsea first">
+				<h4 class="text_center">2</h4>
+			</div>
+			<div class="falsea second">
+				<h4 class="text_center">18</h4>
+			</div>
+			<div class="falsea third">
+				<h4 class="text_center">11</h4>
+			</div>
+			<div class="falsea eleventh">
+				<h4 class="text_center">128</h4>
+			</div>
+			<div class="falsea seventh">
+				<h4 class="text_center">64</h4>
+			</div>
+			<div class="falsea sixth">
+				<h4 class="text_center">256</h4>
+			</div>
+			<div class="newfalsea fifth">
+				<h4 class="text_center">32</h4>
+			</div>
+			<div class="newfalsea eighth">
+				<h4 class="text_center">100</h4>
+			</div>
+			<div class="newfalsea nineth">
+				<h4 class="text_center">200</h4>
+			</div>
+			<div class="newfalsea fourth">
+				<h4 class="text_center">1024</h4>
+			</div>
+			<div class="truea tenth">
+				<h4 class="text_center">512</h4>
+			</div>
+		</div>
+		<div class="loc2_2">
+			<div class="question question5">
+				<h5 class="text_center1">2+12*5/(1+1)</h5>
+			</div>
+			<div class="falsea2 first">
+				<h4 class="text_center">28</h4>
+			</div>
+			<div class="falsea2 second">
+				<h4 class="text_center">12</h4>
+			</div>
+			<div class="falsea2 third">
+				<h4 class="text_center">93</h4>
+			</div>
+			<div class="falsea2 eleventh">
+				<h4 class="text_center">40</h4>
+			</div>
+			<div class="falsea2 fifth">
+				<h4 class="text_center">65</h4>
+			</div>
+			<div class="falsea2 seventh">
+				<h4 class="text_center">34</h4>
+			</div>
+			<div class="newfalsea2 sixth">
+				<h4 class="text_center">42</h4>
+			</div>
+			<div class="newfalsea2 eighth">
+				<h4 class="text_center">124</h4>
+			</div>
+			<div class="newfalsea2 fourth">
+				<h4 class="text_center">22</h4>
+			</div>
+			<div class="newfalsea2 tenth">
+				<h4 class="text_center">80</h4>
+			</div>
+			<div class="truea2 nineth">
+				<h4 class="text_center">32</h4>
+			</div>
+		</div>
+		<div class="loc2_3">
+			<div class="question question6">
+				<h5 class="text_center1" style="font-size: 30px">Если игрушечная ручка и тетрадь стоят 110 рублей, а ручка стоит на 100 рублей больше, чем тетрадь, то сколько стоит тетрадь?</h5>
+			</div>
+			<div class="falsea3 fourth">
+				<h4 class="text_center">110</h4>
+			</div>
+			<div class="falsea3 second">
+				<h4 class="text_center">10</h4>
+			</div>
+			<div class="falsea3 third">
+				<h4 class="text_center">105</h4>
+			</div>
+			<div class="falsea3 eleventh">
+				<h4 class="text_center">100</h4>
+			</div>
+			<div class="falsea3 fifth">
+				<h4 class="text_center">20</h4>
+			</div>
+			<div class="falsea3 sixth">
+				<h4 class="text_center">120</h4>
+			</div>
+			<div class="newfalsea3 seventh">
+				<h4 class="text_center">15</h4>
+			</div>
+			<div class="newfalsea3 eighth">
+				<h4 class="text_center">140</h4>
+			</div>
+			<div class="newfalsea3 nineth">
+				<h4 class="text_center">35</h4>
+			</div>
+			<div class="newfalsea3 tenth">
+				<h4 class="text_center">25</h4>
+			</div>
+			<div class="truea3 first">
+				<h4 class="text_center">5</h4>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		let main = document.querySelector('.main');
+		let loc1_kg = document.querySelector('.loc1_kg');
+		let loc2_km = document.querySelector('.loc2_km');
+		let kabinet_1 = document.querySelector('.kabinet_1');
+		let kabinet_2 = document.querySelector('.kabinet_2');
+		let kabinet_1_2 = document.querySelector('.kabinet_1_2');
+		let kabinet_2_2 = document.querySelector('.kabinet_2_2');
+		let falsea = document.querySelectorAll('.falsea');
+		let truea = document.querySelector('.truea');
+		let falsea2 = document.querySelectorAll('.falsea2');
+		let truea2 = document.querySelector('.truea2');
+		let falsea3 = document.querySelectorAll('.falsea3');
+		let truea3 = document.querySelector('.truea3');
+		let falseq = document.querySelectorAll('.falseq');
+		let trueq = document.querySelector('.trueq');
+		let falseq2 = document.querySelectorAll('.falseq2');
+		let trueq2 = document.querySelector('.trueq2');
+		let falseq3 = document.querySelectorAll('.falseq3');
+		let trueq3 = document.querySelector('.trueq3');
+		let loc1_1 = document.querySelector('.loc1_1');
+		let loc1_2 = document.querySelector('.loc1_2');
+		let loc1_3 = document.querySelector('.loc1_3');
+		let loc2_1 = document.querySelector('.loc2_1');
+		let loc2_2 = document.querySelector('.loc2_2');
+		let loc2_3 = document.querySelector('.loc2_3');
+		let progress_1 = document.querySelector('.progress_1');
+		let progress_2 = document.querySelector('.progress_2');
+		let total = 0;
+		let time = 0;
+		let time2 = 0;
+		let time3 = 0;
+		let kabinet_win = document.querySelector('.kabinet_win');
+		let win = document.querySelector('.win');
+		let stop;
+		let newfalseq = document.querySelectorAll('.newfalseq');
+		let newfalseq2 = document.querySelectorAll('.newfalseq2');
+		let newfalseq3 = document.querySelectorAll('.newfalseq3');
+		let newfalsea = document.querySelectorAll('.newfalsea');
+		let newfalsea2 = document.querySelectorAll('.newfalsea2');
+		let newfalsea3 = document.querySelectorAll('.newfalsea3');
+		let skameyka = document.querySelector('.skameyka');
+		let skameyka2 = document.querySelector('.skameyka2');
+		let clock = document.querySelector('.clock');
+		let chat = document.querySelector('.chat');
+		let chat2 = document.querySelector('.chat2');
+		let innertext = document.querySelector('.innertext');
+		let innertext2 = document.querySelector('.innertext2');
+		let sum = 0;
+		let innertxt1 = 'Хочешь посидеть? Ну уж нет. Иди в класс. Урок уже начался';
+		let innertxt2 = 'Что я тебе говорил? Иди в класс. Быстро!';
+
+		
+
+		clock.onclick = function() {
+			alert('Чего ты на часы смотришь? Иди учиться!')
+		}
+		skameyka.onclick = function() {
+			sum = sum +1;
+			let timeOver = function() {
+				chat.style.display = 'none';
+			}
+			if (sum ==1) {
+				chat.style.display = 'block';
+				innertext.innerHTML = innertxt1;
+				setTimeout(timeOver, 4000);
+			}
+			if (sum >1) {
+				chat.style.display = 'block';
+				innertext.innerHTML = innertxt2;
+				setTimeout(timeOver, 4000);
+			}
+			
+			
+		}
+		skameyka2.onclick = function() {
+			sum = sum +1;
+			let timeOver = function() {
+				chat2.style.display = 'none';
+			}
+			if (sum ==1) {
+				chat2.style.display = 'block';
+				innertext2.innerHTML = innertxt1;
+				setTimeout(timeOver, 4000);
+			}
+			if (sum >1) {
+				chat2.style.display = 'block';
+				innertext2.innerHTML = innertxt2;
+				setTimeout(timeOver, 4000);
+			}			
+		}
+
+
+		kabinet_1.onclick = function() {
+			main.style.display = 'none';
+			loc1_kg.style.display = 'block';
+			loc1_1.style.display = 'block';
+			time =0;
+			clearInterval(stop);
+			let showTime = function() {
+				time = time + 1;
+				if (time ==3) {
+					newfalseq[0].style.display = 'block';					
+				}
+				if (time ==6) {
+					newfalseq[1].style.display = 'block';
+				}
+				if (time ==9) {
+					newfalseq[2].style.display = 'block';
+				}
+				if (time ==12) {
+					newfalseq[3].style.display = 'block';
+				}
+				if (time ==25) {
+					alert('YOU LOSE');			
+					loc1_1.style.display = 'none';
+					for (let i =0; i <4; i++) {
+						newfalseq[i].style.display = 'none';
+					}
+					loc1_kg.style.display = 'none';
+					main.style.display = 'block';
+					clearInterval(stop);
+				}
+				console.log(time);
+			}
+			stop = setInterval(showTime, 1000)
+
+		}
+		kabinet_2.onclick = function() {
+			main.style.display = 'none';
+			loc2_km.style.display = 'block';
+			loc2_1.style.display = 'block';
+			time =0;
+			clearInterval(stop);
+			let showTime = function() {
+				time = time + 1;
+				if (time ==3) {
+					newfalsea[0].style.display = 'block';					
+				}
+				if (time ==6) {
+					newfalsea[1].style.display = 'block';
+				}
+				if (time ==9) {
+					newfalsea[2].style.display = 'block';
+				}
+				if (time ==12) {
+					newfalsea[3].style.display = 'block';
+				}
+				if (time ==25) {
+					alert('YOU LOSE');			
+					loc2_1.style.display = 'none';
+					for (let i =0; i <4; i++) {
+						newfalsea[i].style.display = 'none';
+					}
+					loc2_km.style.display = 'none';
+					main.style.display = 'block';
+					clearInterval(stop);
+				}
+				console.log(time);
+			}
+			stop = setInterval(showTime, 1000)
+		}
+
+		// questions 1
+		for(i=0; i <6; i++) {
+			falseq[i].onclick = function() {
+				alert('неправильно');
+				main.style.display = 'block';
+				loc1_kg.style.display = 'none';
+				clearInterval(stop);
+			}
+		}
+		for(i=0; i <4; i++) {
+			newfalseq[i].onclick = function() {
+				alert('неправильно');
+				main.style.display = 'block';
+				loc1_kg.style.display = 'none';
+				clearInterval(stop);
+			}
+		}
+		for(i=0; i <6; i++) {
+			falsea[i].onclick = function() {
+				alert('неправильно');
+				main.style.display = 'block';
+				loc2_km.style.display = 'none';
+				clearInterval(stop);
+			}
+		}
+		for(i=0; i <4; i++) {
+			newfalsea[i].onclick = function() {
+				alert('неправильно');
+				main.style.display = 'block';
+				loc2_km.style.display = 'none';
+				clearInterval(stop);
+			}
+		}
+
+		// questions 2
+		for(i=0; i <6; i++) {
+			falseq2[i].onclick = function() {
+				alert('неправильно');
+				loc1_kg.style.display = 'none';
+				kabinet_1.style.display = 'none';
+				loc1_2.style.display = 'none';
+				main.style.display = 'block';
+				kabinet_1_2.style.display = 'block';
+				clearInterval(stop);
+			}
+		}
+		for(i=0; i <4; i++) {
+			newfalseq2[i].onclick = function() {
+				alert('неправильно');
+				loc1_kg.style.display = 'none';
+				kabinet_1.style.display = 'none';
+				loc1_2.style.display = 'none';
+				main.style.display = 'block';
+				kabinet_1_2.style.display = 'block';
+				clearInterval(stop);
+			}
+		}
+		for(i=0; i <6; i++) {
+			falsea2[i].onclick = function() {
+				alert('неправильно');
+				loc2_km.style.display = 'none';
+				kabinet_2.style.display = 'none';
+				loc2_2.style.display = 'none';
+				main.style.display = 'block';
+				kabinet_2_2.style.display = 'block';
+				clearInterval(stop);
+			}
+		}
+		for(i=0; i <4; i++) {
+			newfalsea2[i].onclick = function() {
+				alert('неправильно');
+				loc2_km.style.display = 'none';
+				kabinet_2.style.display = 'none';
+				loc2_2.style.display = 'none';
+				main.style.display = 'block';
+				kabinet_2_2.style.display = 'block';
+				clearInterval(stop);
+			}
+		}
+
+		// questions 3
+		for(i=0; i <6; i++) {
+			falseq3[i].onclick = function() {
+				alert('неправильно');
+				loc1_kg.style.display = 'none';
+				kabinet_1.style.display = 'none';
+				loc1_3.style.display = 'none';
+				main.style.display = 'block';
+				kabinet_1_2.style.display = 'block';
+				clearInterval(stop);
+			}
+		}
+		for(i=0; i <4; i++) {
+			newfalseq3[i].onclick = function() {
+				alert('неправильно');
+				loc1_kg.style.display = 'none';
+				kabinet_1.style.display = 'none';
+				loc1_3.style.display = 'none';
+				main.style.display = 'block';
+				kabinet_1_2.style.display = 'block';
+				clearInterval(stop);
+			}
+		}
+		for(i=0; i <6; i++) {
+			falsea3[i].onclick = function() {
+				alert('неправильно');
+				loc2_km.style.display = 'none';
+				kabinet_2.style.display = 'none';
+				loc2_3.style.display = 'none';
+				main.style.display = 'block';
+				kabinet_2_2.style.display = 'block';
+				clearInterval(stop);
+			}
+		}
+		for(i=0; i <4; i++) {
+			newfalsea3[i].onclick = function() {
+				alert('неправильно');
+				loc2_km.style.display = 'none';
+				kabinet_2.style.display = 'none';
+				loc2_3.style.display = 'none';
+				main.style.display = 'block';
+				kabinet_2_2.style.display = 'block';
+				clearInterval(stop);
+			}
+		}
+
+
+		
+		// loc1 > loc2
+		trueq.onclick = function() {
+			let nextQuestion1_1 = function() {
+				loc1_1.style.display = 'none';
+				loc1_2.style.display = 'block';
+			}
+			nextQuestion1_1();
+			time =0;
+			clearInterval(stop);
+			let showTime = function() {
+				time = time + 1;
+				if (time ==3) {
+					newfalseq2[0].style.display = 'block';					
+				}
+				if (time ==6) {
+					newfalseq2[1].style.display = 'block';
+				}
+				if (time ==9) {
+					newfalseq2[2].style.display = 'block';
+				}
+				if (time ==12) {
+					newfalseq2[3].style.display = 'block';
+				}
+				if (time ==25) {
+					alert('YOU LOSE');			
+					loc1_kg.style.display = 'none';
+					kabinet_1.style.display = 'none';
+					loc1_2.style.display = 'none';
+					main.style.display = 'block';
+					kabinet_1_2.style.display = 'block';
+					clearInterval(stop);
+				}
+				console.log(time);
+			}
+			stop = setInterval(showTime, 1000)
+		}
+
+		truea.onclick = function() {
+			let nextQuestion2_1 = function() {
+				loc2_1.style.display = 'none';
+				loc2_2.style.display = 'block';
+			}
+			nextQuestion2_1();
+			time =0;
+			clearInterval(stop);
+			let showTime = function() {
+				time = time + 1;
+				if (time ==3) {
+					newfalsea2[0].style.display = 'block';					
+				}
+				if (time ==6) {
+					newfalsea2[1].style.display = 'block';
+				}
+				if (time ==9) {
+					newfalsea2[2].style.display = 'block';
+				}
+				if (time ==12) {
+					newfalsea2[3].style.display = 'block';
+				}
+				if (time ==25) {
+					alert('YOU LOSE');			
+					loc2_km.style.display = 'none';
+					kabinet_2.style.display = 'none';
+					loc2_2.style.display = 'none';
+					main.style.display = 'block';
+					kabinet_2_2.style.display = 'block';
+					clearInterval(stop);
+				}
+				console.log(time);
+			}
+			stop = setInterval(showTime, 1000)
+		}
+
+		// loc2 > loc3
+		trueq2.onclick = function() {
+			let nextQuestion1_2 = function() {
+				loc1_2.style.display = 'none';
+				loc1_3.style.display = 'block';
+			}
+			nextQuestion1_2();
+			time =0;
+			clearInterval(stop);
+			let showTime = function() {
+				time = time + 1;
+				if (time ==3) {
+					newfalseq3[0].style.display = 'block';					
+				}
+				if (time ==6) {
+					newfalseq3[1].style.display = 'block';
+				}
+				if (time ==9) {
+					newfalseq3[2].style.display = 'block';
+				}
+				if (time ==12) {
+					newfalseq3[3].style.display = 'block';
+				}
+				if (time ==25) {
+					alert('YOU LOSE');			
+					loc1_kg.style.display = 'none';
+					kabinet_1.style.display = 'none';
+					loc1_3.style.display = 'none';
+					main.style.display = 'block';
+					kabinet_1_2.style.display = 'block';
+					clearInterval(stop);
+				}
+				console.log(time);
+			}
+			stop = setInterval(showTime, 1000)
+		}
+
+		truea2.onclick = function() {
+			let nextQuestion2_2 = function() {
+				loc2_2.style.display = 'none';
+				loc2_3.style.display = 'block';
+			}
+			nextQuestion2_2();
+			time =0;
+			clearInterval(stop);
+			let showTime = function() {
+				time = time + 1;
+				if (time ==3) {
+					newfalsea3[0].style.display = 'block';					
+				}
+				if (time ==6) {
+					newfalsea3[1].style.display = 'block';
+				}
+				if (time ==9) {
+					newfalsea3[2].style.display = 'block';
+				}
+				if (time ==12) {
+					newfalsea3[3].style.display = 'block';
+				}
+				if (time ==25) {
+					alert('YOU LOSE');
+					loc2_km.style.display = 'none';
+					kabinet_2.style.display = 'none';
+					loc2_3.style.display = 'none';
+					main.style.display = 'block';
+					kabinet_2_2.style.display = 'block';
+					clearInterval(stop);
+				}
+				console.log(time);
+			}
+			stop = setInterval(showTime, 1000)
+		}
+
+		// loc3 > main
+		trueq3.onclick = function() {
+			let nextQuestion1_3 = function() {
+				loc1_kg.style.display = 'none';
+				loc1_3.style.display = 'none';
+				main.style.display = 'block';
+				kabinet_1.style.display = 'none';
+				kabinet_1_2.style.display = 'block';
+				progress_1.style.background = 'green';	
+				total = total + 1;
+				if (total ==2) {
+					kabinet_win.onclick = function() {
+						main.style.display = 'none';
+						win.style.display = 'block';
+					}
+				}		
+			}
+			nextQuestion1_3();
+			time =0;
+			clearInterval(stop);
+			
+		}
+
+		truea3.onclick = function() {
+			let nextQuestion2_3 = function() {
+				loc2_km.style.display = 'none';
+				kabinet_2.style.display = 'none';
+				loc2_3.style.display = 'none';
+				main.style.display = 'block';
+				kabinet_2_2.style.display = 'block';
+				progress_2.style.background = 'green';	
+				total = total + 1;	
+				if (total ==2) {
+					kabinet_win.style.backgroundImage = 'url(door_3_2.png)';
+					kabinet_win.style.backgroundSize = '100% 100%';
+					kabinet_win.onclick = function() {
+						main.style.display = 'none';
+						win.style.display = 'block';
+					}
+				}				
+			}
+			nextQuestion2_3();
+			time =0;
+			clearInterval(stop);
+			
+		}
+		if (total ==2) {
+			kabinet_win.style.backgroundImage = 'url(door_3_2.png)';
+			kabinet_win.style.backgroundSize = '100% 100%';
+			kabinet_win.onclick = function() {
+				main.style.display = 'none';
+				win.style.display = 'block';
+			}
+		}
+
+	</script>
+</body>
+</html>
